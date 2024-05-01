@@ -2,15 +2,15 @@ import mongoose from "mongoose"
 import { setThePassword } from "whatwg-url"
 
 const userSchema = new mongoose.Schema({
-    name: string,
+    name: String,
     email: {
-    type: string,
-        required: true
+    type: String,
+        unique: true
     },
     password: {
-    type: string,
+    type: String,
         required: true
     },
 })
 
-export default mongoose.model("Users", userSchema);
+export default mongoose.model("users", userSchema);
